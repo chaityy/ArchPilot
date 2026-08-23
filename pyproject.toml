@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "archpilot"
+version = "1.0.0"
+description = "A detailed, Python-powered system info tool - a neofetch/fastfetch alternative"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Chaity" }]
+dependencies = [
+    "psutil>=5.9",
+    "rich>=13.0",
+    "distro>=1.9; sys_platform == 'linux'",
+    "py-cpuinfo>=9.0",
+]
+
+[project.scripts]
+archpilot = "archpilot.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["archpilot*"]
